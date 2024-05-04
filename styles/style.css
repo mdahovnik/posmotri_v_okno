@@ -9,6 +9,9 @@ html {
 }
 
 .page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   inline-size: 1200px;
   block-size: 100%;
   margin: auto;
@@ -35,4 +38,28 @@ fieldset {
 ul,
 ol {
   list-style: none;
+}
+
+.content{
+  display: flex;
+  /* justify-content: space-between; */
+  align-items: end;
+  gap: 30px;
+  width: 1140px;
+}
+
+.search-form{
+  display: grid;
+  grid-template-columns: 1fr 212px 1fr;
+  gap: 40px;
+  align-items: end;
+}
+
+.title{
+  margin-bottom: 26px;
+}
+
+.content__list{
+  height: 298px;
+  overflow: scroll;
 }
