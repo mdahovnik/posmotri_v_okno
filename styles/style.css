@@ -56,14 +56,30 @@ ol {
   align-items: end;
 }
 
-.search-form__label-text{
+.search-form__fieldset-title {
+  font-weight: 400;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.search-form__label-text {
   display: inline;
 }
 
 .title {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 700;
+  font-size: 75px;
+  line-height: 94%;
+  text-transform: uppercase;
   margin-bottom: 26px;
 }
-.content__details{
+
+h .content__accent {
+  color: #545050;
+}
+
+.content__details {
   width: 399px;
 }
 
@@ -76,6 +92,23 @@ ol {
 
 .content__list-item:not(:last-child) {
   padding-bottom: 30px;
+}
+
+.content__video-card-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.content__video-card-description {
+  line-height: 90%;
+}
+
+.content__card-link {
+  color: inherit;
+  text-decoration: none;
 }
 
 .content__video-card {
