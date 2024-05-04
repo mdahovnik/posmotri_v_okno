@@ -49,19 +49,29 @@ ol {
 }
 
 .search-form {
-  display: grid;
-  grid-template-columns: 1fr 212px 1fr;
+  /* display: grid; */
+  /* grid-template-columns: 1fr 212px 1fr; */
+  display: flex;
   gap: 40px;
   align-items: end;
+}
+
+.search-form__label-text{
+  display: inline;
 }
 
 .title {
   margin-bottom: 26px;
 }
+.content__details{
+  width: 399px;
+}
 
 .content__list {
+  position: relative;
   height: 298px;
   overflow-y: scroll;
+  scrollbar-width: none;
 }
 
 .content__list-item:not(:last-child) {
@@ -74,7 +84,7 @@ ol {
 }
 
 .content__video-card-thumbnail {
-  /* width: 194px; */
+  width: 194px;
   height: 103px;
   object-fit: cover;
 }
@@ -83,10 +93,11 @@ ol {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 711px;
 }
 
 .result__video-container {
-  width: 711px;
+  position: relative;
   height: 386px;
 }
 
