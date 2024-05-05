@@ -42,7 +42,6 @@ ol {
 
 .content {
   display: flex;
-  /* justify-content: space-between; */
   align-items: end;
   gap: 30px;
   width: 1140px;
@@ -50,20 +49,75 @@ ol {
 
 .search-form {
   /* display: grid; */
-  /* grid-template-columns: 1fr 212px 1fr; */
+  /* grid-template-columns: fit-content(225px) fit-content(212px) 1fr; */
   display: flex;
   gap: 40px;
-  align-items: end;
+}
+
+.search-form__fieldset {
+  border: none;
+}
+
+.search-form__textfield {
+  border: none;
+  border-bottom: 1px solid #fff;
+  border-top: 1px solid #fff;
+  width: 225px;
+  height: 27px;
+  font-family: inherit;
+  font-size: 18px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.7);
+  appearance: none;
 }
 
 .search-form__fieldset-title {
-  font-weight: 400;
   font-size: 18px;
   margin-bottom: 5px;
 }
 
+.search-form__label {
+  display: inline-block;
+  width: fit-content;
+}
+
+.search-form__checkbox-list {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  /* width: fit-content; */
+  /* height: 40px; */
+}
+
+.search-form__pseudo-checkbox {
+  border: 1px solid #fff;
+  display: inline-block;
+  cursor: pointer;
+  width: 19px;
+  height: 19px;
+  /* margin-right: 4px; */
+}
+
 .search-form__label-text {
-  display: inline;
+  display: inline-block;
+}
+
+.button {
+  border: none;
+  border: 1px solid #fff;
+  cursor: pointer;
+  font-family: 'Fira Sans Condensed', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  text-align: center;
+  color: #fff;
+  background: transparent;
+}
+
+.search-form__submit-button {
+  width: 194px;
+  height: 34px;
+  align-self: flex-end;
 }
 
 .title {
@@ -75,7 +129,7 @@ ol {
   margin-bottom: 26px;
 }
 
-h .content__accent {
+.content__accent {
   color: #545050;
 }
 
@@ -87,7 +141,7 @@ h .content__accent {
   position: relative;
   height: 298px;
   overflow-y: scroll;
-  scrollbar-width: none;
+  /* scrollbar-width: none; */
 }
 
 .content__list-item:not(:last-child) {
@@ -122,6 +176,12 @@ h .content__accent {
   object-fit: cover;
 }
 
+.more-button {
+  /* width: 399px; */
+  width: 100%;
+  height: 34px;
+}
+
 .result {
   display: flex;
   flex-direction: column;
@@ -138,4 +198,14 @@ h .content__accent {
   height: 100%;
   width: 100%;
   object-fit: cover;
+}
+
+.visually-hidden {
+  position: absolute;
+  inline-size: 1px;
+  block-size: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
 }
