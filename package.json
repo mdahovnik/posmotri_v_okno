@@ -1,0 +1,27 @@
+{
+  "name": "posmotri_v_okno",
+  "version": "1.0.0",
+  "description": "PR-2",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "check": "prettier --check './**/*.{html,css,js}'",
+    "format": "prettier --write './**/*.{html,css,js}'",
+    "lint": "stylelint **/*.css",
+    "lintfix": "stylelint **/*.css --fix"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdahovnik/posmotri_v_okno.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdahovnik/posmotri_v_okno/issues"
+  },
+  "homepage": "https://github.com/mdahovnik/posmotri_v_okno#readme",
+  "dependencies": {
+    "prettier": "^3.2.5",
+    "stylelint": "^16.5.0"
+  }
+}
