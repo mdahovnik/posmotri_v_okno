@@ -45,24 +45,24 @@ ol {
   grid-template-columns: 711px 399px;
   align-items: end;
   gap: 30px;
-  width: 1140px;
+  inline-size: 1140px;
 }
 
 .result {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 711px;
+  inline-size: 711px;
 }
 
 .result__video-container {
   position: relative;
-  height: 386px;
+  block-size: 386px;
 }
 
 .result__video {
-  height: 100%;
-  width: 100%;
+  block-size: 100%;
+  inline-size: 100%;
   object-fit: cover;
   object-position: center;
 }
@@ -79,18 +79,18 @@ ol {
 
 .search-form__fieldset-title {
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-block-end: 5px;
 }
 
 .search-form__textfield {
   border: none;
   padding: 0;
-  border-bottom: 1px solid currentColor;
-  border-top: 1px solid currentColor;
-  width: 225px;
-  height: 27px;
+  border-block-end: 1px solid currentColor;
+  border-block-start: 1px solid currentColor;
+  inline-size: 225px;
+  block-size: 27px;
   font-family: inherit;
-  font-size: 18px;
+  font-size: inherit;
   background: transparent;
   color: currentColor;
   appearance: none;
@@ -105,7 +105,7 @@ ol {
   align-items: center;
   justify-content: center;
   gap: 5px;
-  width: fit-content;
+  inline-size: fit-content;
 }
 
 /* #region SEARCH-FORM__LABEL BEHAVIOR*/
@@ -123,6 +123,10 @@ ol {
   text-decoration: underline;
 }
 
+.search-form__label:active .search-form__label-text {
+  text-decoration: none;
+}
+
 .search-form__label:active .search-form__textfield {
   border: none;
 }
@@ -135,15 +139,20 @@ ol {
 }
 
 .search-form__pseudo-checkbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: 1px solid currentColor;
-  width: 19px;
-  height: 19px;
+  inline-size: 19px;
+  block-size: 19px;
 }
 
-.search-form__checkbox:checked + .search-form__pseudo-checkbox {
-  border: 2px solid #1b1919;
+.search-form__checkbox:checked + .search-form__pseudo-checkbox::after {
+  content: '';
+  border: 1px solid currentColor;
+  inline-size: 15px;
+  block-size: 15px;
   background-color: currentColor;
-  outline: 1px solid currentColor;
 }
 
 .button {
@@ -185,7 +194,7 @@ ol {
 /* #endregion */
 
 .search-form__submit-button {
-  width: 194px;
+  inline-size: 194px;
   align-self: flex-end;
 }
 
@@ -195,7 +204,7 @@ ol {
   font-size: 75px;
   line-height: 94%;
   text-transform: uppercase;
-  margin-bottom: 23px;
+  margin-block-end: 23px;
 }
 
 .content__accent {
@@ -204,20 +213,17 @@ ol {
 
 .content__list {
   position: relative;
-  height: 298px;
-  overflow: auto;
+  block-size: 298px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.content__list-item {
+  inline-size: 394px;
 }
 
 .content__list-item:not(:last-child) {
-  padding-bottom: 30px;
-}
-
-.content__video-card-title {
-  font-family: Oswald, sans-serif;
-  font-size: 30px;
-  line-height: 100%;
-  text-transform: uppercase;
-  margin-bottom: 6px;
+  padding-block-end: 30px;
 }
 
 .content__card-link {
@@ -249,33 +255,51 @@ ol {
 
 .content__card-link:active {
   text-decoration: none;
+  background-color: #545050;
 }
 
 /* #endregion */
-
-.content__video-card-description-container {
-  padding-top: 2px;
-  padding-left: 1px;
-}
-
-.content__video-card-description {
-  line-height: 90%;
-  max-width: fit-content;
-}
 
 .content__video-card {
   display: flex;
   justify-content: space-between;
 }
 
+.content__video-card-description-container {
+  padding-block-start: 2px;
+  padding-inline-start: 1px;
+  inline-size: 200px;
+}
+
+.content__video-card-title {
+  font-family: Oswald, sans-serif;
+  font-size: 30px;
+  line-height: 100%;
+  text-transform: uppercase;
+  margin-block-end: 6px;
+  max-inline-size: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  padding-block-end: 5px;
+}
+
+.content__video-card-description {
+  line-height: normal;
+  max-inline-size: 100%;
+  overflow-wrap: break-word;
+}
+
 .content__video-card-thumbnail {
-  height: 102px;
+  inline-size: 194px;
+  block-size: 103px;
   object-fit: cover;
+  object-position: center;
 }
 
 .more-button {
   margin: 2px;
-  width: 380px;
+  inline-size: 399px;
 }
 
 .visually-hidden {
